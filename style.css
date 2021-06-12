@@ -47,6 +47,10 @@ section{
 .card{
     border:none;
 }
+.card:hover{
+    color: rgb(160, 160, 160);
+    background-color: rgb(235, 235, 235);
+}
 
 /*tuning sport i zabava naslova*/
 .img1{
@@ -60,6 +64,22 @@ section{
 /*unos.html FORMA*/
 form{
     width: 50%;
+}
+#register{
+    background-color:#1e6685;
+    border: none;
+    width: 150px; 
+}
+#register:hover{
+    background-color:#19526b;
+}
+#prijava{
+    background-color:#1e6685;
+    border: none;
+    width: 150px; 
+}
+#prijava:hover{
+    background-color:#19526b;
 }
 
 #posalji{

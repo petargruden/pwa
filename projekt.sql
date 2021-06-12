@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 12:02 PM
+-- Generation Time: Jun 07, 2021 at 01:58 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -20,6 +20,43 @@ SET time_zone = "+00:00";
 --
 -- Database: `projekt`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `korisnik`
+--
+
+CREATE TABLE `korisnik` (
+  `id` int(11) NOT NULL,
+  `ime` varchar(32) COLLATE utf8mb4_croatian_ci NOT NULL,
+  `prezime` varchar(32) COLLATE utf8mb4_croatian_ci NOT NULL,
+  `korisnicko_ime` varchar(32) COLLATE utf8mb4_croatian_ci NOT NULL,
+  `lozinka` varchar(255) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `razina` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_croatian_ci;
+
+--
+-- Dumping data for table `korisnik`
+--
+
+INSERT INTO `korisnik` (`id`, `ime`, `prezime`, `korisnicko_ime`, `lozinka`, `razina`) VALUES
+(3, 'Ivan ', 'Stjepanovic', 'istjepan', '$2y$10$8uiKE8Aq1znN9yoyVkxr8uNdRqV5Sp7/WPf7KOrTdxWs/vrBpWE1i', 0),
+(4, 'ete', 'tete', 'etetete', '$2y$10$39dZ75JsPNAv0TAkC3s/aOPO6d2G9OuhfkDahB2UwnEFNx4EDRL2i', 0),
+(5, 'test', 'testic', 'testictest', '$2y$10$sFFQC8iqQo002.xKrRaisu1GD2VWLT/NXT/7zndaVqav.CnR3YtTu', 0),
+(6, 'Marko', 'Maric', 'mmaric', '$2y$10$Vw0BR7OD3lSfMrOASnj6GOV208wdqKKcuhER5vuzV4HLRH0mzjwC.', 0),
+(7, 'Marko', 'Dengru', 'dengruma', '$2y$10$SZOhBxV4h7I.cwQ4GbM9IOIm75tYvZG0M.GlKYSw6aJHcd5CngV9i', 0),
+(8, 'Marko', 'Maric', 'gandal19990', '$2y$10$Iqw7RMAEm7haB5y4qKvIyeYWA5m8mvzlqdQK8RWKwqTUgkm/Jmm8a', 0),
+(9, 'Ivan ', '99', 'ivan99', '$2y$10$bwPoPWbZp0rM3EdLyZCFNeQCY.MDO7hbU4V8JOcau.AMsgfusvwEa', 0),
+(10, 'test', 'test', 'amen123', '$2y$10$.JwlgkpIpl5ovQKk0XvBDuYkj.GRxoMiNX4MLMGhVMjCwHsXn/viK', 0),
+(11, 'Petar', 'da', 'dadadad', '$2y$10$EN8en9VfUUCn5BmRKBTxSuWLoq5BaZIFcEa6Xv.BtFMVURr/i5Di6', 0),
+(12, 'Marko', 'stakovic', 'pgruden', '$2y$10$DjENhcqA5a.TMJnYnqKWCOY5Hv7Aoqn0nB5o103ebmSMPFMQhdkWC', 0),
+(13, 'Stjepan', 'Maric', 'tadara', '$2y$10$4zLHGJH53CLUcx4ksz0qUutvz4EWZLFONs4GEWgZm.OVHrIWTxT6e', 0),
+(14, 'stef', 'stefa', 'stefa', '$2y$10$ti6M6Kg.wGo4i/U16Cd0WOlFYUV4VMb6C7TzXRqHnkAplTUStGwFu', 0),
+(15, 'Petar', 'Gruden', 'admin', '$2y$10$htg9b2LZTasbJlfT/4A8Leg59loOTJa/ZlQi.gFaUqe7dNyech4PS', 1),
+(16, 'noviKorisnik', 'korisnik', 'korisnik', '$2y$10$tMt2nqAQV3cpbQ31oSxZSeCF0/00NoxirkXr2a/XGZ9mIPWI2KVfy', 0),
+(17, 'Petar', 'da', 'user1', '$2y$10$JvwAofI6e09y/ofjHBmBQuyRlH1QpTDtC50EnJ6.RyJ94THX3y7XG', 0),
+(18, 'Ratko', 'Ratkic', 'ratkic', '$2y$10$k7LCTYetyKgWvmyXR47vpuTqOXXuROFjc.vS0Ra1PGImY0Hq19f3m', 0);
 
 -- --------------------------------------------------------
 
@@ -53,14 +90,18 @@ INSERT INTO `vijesti` (`id`, `datum`, `naslov`, `sazetak`, `tekst`, `slika`, `ka
 (15, '18.05.2021.', 'REAL MADRID vs BARCELONA', 'dadasd', 'vijestu su laznevijestu su laznevijestu su laznevijestu su lazne', '', 'Zabava', 1),
 (16, '18.05.2021.', 'test za 4 limit', 'pokusaj ubacivanja testa 4 prikaza', 'pokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikazapokusaj ubacivanja testa 4 prikaza', 'zabava.jpg', 'Zabava', 0),
 (17, '18.05.2021.', 'John D Carl', 'John D carl je god tarkova', 'aimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviranaimbot ima aktiviran', 'nog2.png', 'Zabava', 0),
-(18, '18.05.2021.', 'Test 4 reda', 'kratki sadrzaj neki', 'lkajskjfghersuihasuoifj lkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifj', 'zabava1.png', 'Zabava', 0),
-(20, '24.05.2021.', '', '', '', '', 'Sport', 0),
-(23, '24.05.2021.', '', '', '', '', 'Sport', 0),
-(28, '24.05.2021.', 'FDSA', 'EDFSDFS', 'FDDSFDSFDS', '', 'Sport', 0);
+(18, '18.05.2021.', 'Test 4 reda', 'kratki sadrzaj neki', 'lkajskjfghersuihasuoifj lkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifjlkajskjfghersuihasuoifj', 'zabava1.png', 'Zabava', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `korisnik`
+--
+ALTER TABLE `korisnik`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `korisnicko_ime` (`korisnicko_ime`);
 
 --
 -- Indexes for table `vijesti`
@@ -73,10 +114,16 @@ ALTER TABLE `vijesti`
 --
 
 --
+-- AUTO_INCREMENT for table `korisnik`
+--
+ALTER TABLE `korisnik`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `vijesti`
 --
 ALTER TABLE `vijesti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

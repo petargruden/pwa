@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "header.php";
 
 ?>
@@ -31,7 +31,7 @@ include "header.php";
                         $result = mysqli_query($dbc, $query);
                         while($row = mysqli_fetch_array($result)) {
                             echo '
-                            <div class="card col-md-3 logo" style="width: 18rem;">
+                            <div class="card col-sm-6 col-12 logo" style="width: 18rem;">
                             <img class="card-img-top" src="'. UPLPATH . $row['slika'] . '" alt="Card image cap">
                             <div class="card-body">
                             <a href="clanak.php?id= '.$row['id'].'">

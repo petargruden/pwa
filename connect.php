@@ -1,12 +1,12 @@
 <?php
 //header('Content-Type: text/html; charset=utf-8');
-$servername = "localhost";
-$username = "root";
-$password = "";
+$imeBaze = "localhost";
+$korIme = "root";
+$sifraBaze = "";
 $basename = "projekt";
 
 // Create connection
-$dbc = mysqli_connect($servername, $username, $password, $basename) or die('Error connecting to MySQL server.'.mysqli_connect_error());
+$dbc = mysqli_connect($imeBaze, $korIme, $sifraBaze, $basename) or die('Error connecting to MySQL server.'.mysqli_connect_error());
 mysqli_set_charset($dbc, "utf8");
 
  //Check connection
